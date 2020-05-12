@@ -23,11 +23,13 @@ module.exports = listTorrent = async (url, usePagination, req, page) => {
           // Get Single torrent
           const torrent = {
             //Torrent ID
-            id: $(el).find(".detName a").attr("href").split("/")[2],
+            id: $(el)
+              .find('a[class="detLink"]')
+              .attr("href")
+              .split("torrent/")[1]
+              .split("/")[0],
             // Title
             title: $(el).find(".detName a").text(),
-            // URL Link (not very important)
-            link: $(el).find('a[class="detLink"]').attr("href"),
             // Magnet Link
             magnet: $(el)
               .find('a[title="Download this torrent using magnet"]')

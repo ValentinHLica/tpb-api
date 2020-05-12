@@ -9,7 +9,6 @@ const BookmarkTorrent = new mongoose.Schema({
     type: String,
     required: [true, "Please privide torrent title"],
   },
-  link: { type: String, required: [true, "Please privide torrent link"] },
   magnet: {
     type: String,
     required: [true, "Please privide torrent magnet link"],
